@@ -1,5 +1,6 @@
 package serpis.psp;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
@@ -12,13 +13,17 @@ public class HttpServer {
 
         public static void main(String [] array) throws IOException 
 	{
-        	String newLine="\r\n";
+       
         int port=8080;
+        int bytes;
+        byte[] buffer=new byte[1024];
         ServerSocket serverSocket = new ServerSocket(port);
         
+        while(true){
         Socket socket =serverSocket.accept();
+        System.setProperty("line.separator", "\r\n");
        Scanner scanner = new Scanner( socket.getInputStream());
-       
+  /*     
        while (true){
     	   String line =scanner.nextLine();
     	   System.out.println(line);
@@ -26,14 +31,29 @@ public class HttpServer {
     		   break;
     	   }
     	   
+       }*/
+       
+       PrintWriter printWriter = new PrintWriter(socket.getOutputStream(),true);
+       scanner.next();
+       String file="."+scanner.next();
+       FileInputStream fis=null;
+       boolean exists=true;
+       try{
+    	   fis=new FileInputStream(file);
+       }catch(Exception e){
+    	   exists=false;
        }
        
-       PrintWriter printWriter = new PrintWriter(socket.getOutputStream());
-       printWriter.print("HTTP/1.0 404 Not Found"+newLine);
-       printWriter.print(newLine);
-      
+       if (exists && file.length()>2)
+    	   while((bytes= fis.read(buffer))  !=-1)
+    		   socket.getOutputStream().write(buffer,0,bytes);
+       else{
+       
+       printWriter.println("HTTP/1.0 404 Not Found");
+       printWriter.println();
+       }
 
-       printWriter.flush();
+     
 
        
        socket.close();
@@ -43,7 +63,7 @@ public class HttpServer {
         	}
         
         
-        
+	} 
 	}
 	
 	
