@@ -1,7 +1,10 @@
 package serpis.psp;
 
+
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -14,53 +17,56 @@ public class HttpServer {
         public static void main(String [] array) throws IOException 
 	{
        
-        int port=8080;
-        int bytes;
-        byte[] buffer=new byte[1024];
+       final int port=8080;
+        final String newLine="\r\n";
+      final String fileNameError404="fileError404.html";
+      final String response200="HTTP/1.0 200 OK";
+      final String response404="HTTP/1.0 404 Not Found";
         ServerSocket serverSocket = new ServerSocket(port);
-        
-        while(true){
-        Socket socket =serverSocket.accept();
-        System.setProperty("line.separator", "\r\n");
+              
+        Socket socket =serverSocket.accept();       
        Scanner scanner = new Scanner( socket.getInputStream());
-  /*     
+      
+       String fileName="index.html";
        while (true){
     	   String line =scanner.nextLine();
+    	   if (line.startsWith("GET")){
+    		   
+    	   }
     	   System.out.println(line);
     	   if (line.equals("")){
     		   break;
     	   }
     	   
-       }*/
-       
-       PrintWriter printWriter = new PrintWriter(socket.getOutputStream(),true);
-       scanner.next();
-       String file="."+scanner.next();
-       FileInputStream fis=null;
-       boolean exists=true;
-       try{
-    	   fis=new FileInputStream(file);
-       }catch(Exception e){
-    	   exists=false;
        }
+       File file = new File(fileName);
+       String responseFileName=file.exists() ? fileName : fileNameError404;
+      String response = file.exists() ? response200 : response404;
+    	 
+    	   
+       FileInputStream fileInputStream=new FileInputStream(responseFileName);
        
-       if (exists && file.length()>2)
-    	   while((bytes= fis.read(buffer))  !=-1)
-    		   socket.getOutputStream().write(buffer,0,bytes);
-       else{
+       String header=response+newLine+newLine;
+      
        
-       printWriter.println("HTTP/1.0 404 Not Found");
-       printWriter.println();
-       }
-
-     
-
+      byte[] headerBuffer= header.getBytes();
        
+       OutputStream outputStream = socket.getOutputStream();
+       outputStream.write(headerBuffer);
+       
+       final int bufferSize=2048;
+       byte[] buffer= new byte[bufferSize];
+       
+       int count;
+       while((count=fileInputStream.read(buffer))!=-1)
+    	   outputStream.write(buffer, 0, count);
+       
+       fileInputStream.close();
        socket.close();
        serverSocket.close();
         	
 		
-        	}
+        	
         
         
 	} 

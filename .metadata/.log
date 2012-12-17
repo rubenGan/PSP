@@ -29,3 +29,38 @@ Binding(CTRL+D,
 
 !ENTRY org.eclipse.m2e.logback.appender 4 0 2012-12-11 17:20:42.499
 !MESSAGE Failed to open search index.
+!SESSION 2012-12-13 08:14:11.975 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=es_ES
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.core.resources 2 10035 2012-12-13 08:14:34.607
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 4 4 2012-12-13 08:14:57.550
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2012-12-17 08:13:05.679 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=es_ES
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2012-12-17 08:20:16.189
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Timed out while retrieving the attached javadoc for FileInputStream [in FileInputStream.class [in java.io [in /usr/lib/jvm/java-6-openjdk-i386/jre/lib/rt.jar]]] ]
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:808)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1037)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:643)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.extractJavadoc(ProposalInfo.java:95)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.computeInfo(ProposalInfo.java:75)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.getInfo(ProposalInfo.java:58)
+	at org.eclipse.jdt.internal.ui.text.java.AbstractJavaCompletionProposal.getAdditionalProposalInfo(AbstractJavaCompletionProposal.java:555)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1012 2012-12-17 08:20:16.190
+!MESSAGE Timed out while retrieving the attached javadoc for FileInputStream [in FileInputStream.class [in java.io [in /usr/lib/jvm/java-6-openjdk-i386/jre/lib/rt.jar]]] 
