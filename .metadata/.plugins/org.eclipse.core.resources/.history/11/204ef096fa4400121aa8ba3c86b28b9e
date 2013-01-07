@@ -1,0 +1,21 @@
+package serpis.psp;
+
+public class PruebaStream {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+	
+		if (args.length !=2){
+			System.out.println("uso: PruebaStream source dest");
+			return;
+		}
+		String inputFileName="";
+		String outputFileName="";
+		
+		
+
+	}
+
+}
