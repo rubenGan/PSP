@@ -50,8 +50,7 @@ public class ThreadServer implements Runnable{
          while (true){
       	   String line =scanner.nextLine();
       	   if (line.startsWith("GET")){
-      		   
-      		  //GET /index.html HTTP/1.1
+      		  
     fileName= line.substring(5, line.length()-9).trim();
       		 
       		System.out.println("ARCHIVO PEDIDO: "+fileName);
