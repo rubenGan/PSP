@@ -1,0 +1,12 @@
+{
+  "/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/rt.jar": {
+    "location": "/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/rt.jar",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/rt.jar\u0027. Skipped."
+  },
+  "/home/ruben/PSP/PHttpServer/src": {
+    "location": "/home/ruben/PSP/PHttpServer/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/home/ruben/PSP/PHttpServer/src\u0027. Skipped."
+  }
+}

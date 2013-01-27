@@ -1,0 +1,42 @@
+package Serpis.psp;
+
+import java.io.IOException;
+import java.net.*;
+
+public class HttpServerMain {
+
+	/**
+	 * @param args
+	 * @throws IOException 
+	 */
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		
+		
+		
+		final int port = 8080;
+		
+		ServerSocket serverSocket = null;
+		
+        
+
+        try {
+        	serverSocket = new ServerSocket(port);
+        } catch (IOException e)
+        {
+            System.err.println("No se puede escuchar en el puerto 8080.");
+            System.exit(-1);
+        }
+        
+        
+        
+
+        while (true)
+        {
+          new HttpServerThread(serverSocket.accept()).start();
+          //serverSocket.close();
+        }
+        
+	}
+
+}
