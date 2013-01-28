@@ -1,4 +1,4 @@
-package serpis.psp;
+package Serpis.psp;
 
 
 import java.io.File;
@@ -19,8 +19,9 @@ private static final String newLine="\r\n";
 {
        
       final int port=8080;
+     String threadName= Thread.currentThread().getName();
     
-      
+      System.out.println("threadName= "+threadName);
          
         ServerSocket serverSocket = new ServerSocket(port);
          try{
@@ -48,20 +49,25 @@ private static final String newLine="\r\n";
       
         private static String getFileName(InputStream inputStream){
          Scanner scanner = new Scanner( inputStream);
-             String fileName="index.html";
+             String fileName="";
+             final String defaultFileName="index.html";
              //Leemos la petición del cliente
              while (true){
            String line =scanner.nextLine();
            if (line.startsWith("GET")){
            fileName= line.substring(5, line.length()-9).trim();
              
-               System.out.println("ARCHIVO PEDIDO: "+fileName);
            }
-           System.out.println(line);
+          // System.out.println(line);
            if (line.equals("")){
            break;
            }
         }
+             if(fileName.equals(""))
+     			fileName=defaultFileName;
+             
+             System.out.println("ARCHIVO PEDIDO: "+fileName);
+
              return fileName;
 
         }
