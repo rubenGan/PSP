@@ -103,3 +103,30 @@ Command-line arguments:  -os linux -ws gtk -arch x86
 
 !ENTRY org.eclipse.ui 4 4 2013-01-25 08:22:09.524
 !MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2013-01-25 10:15:37.511 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=es_ES
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2013-01-25 10:21:20.575
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2013-01-28 08:16:53.876 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=es_ES
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2013-01-28 08:17:51.125
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2013-01-28 08:22:12.749 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=es_ES
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2013-01-28 08:22:34.669
+!MESSAGE Invalid preference page path: XML Syntax

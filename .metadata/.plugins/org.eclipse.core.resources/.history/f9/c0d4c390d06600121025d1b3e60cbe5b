@@ -8,8 +8,6 @@ import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class ThreadServer implements Runnable{
 	private  static final String newLine="\r\n";
@@ -54,12 +52,7 @@ public class ThreadServer implements Runnable{
       	   if (line.startsWith("GET")){
       		   
       		  //GET /index.html HTTP/1.1
-  //  fileName= line.substring(5, line.length()-9).trim();
-      		   //EXPRESIÓN REGULAR
-      		   
-      		   Pattern pattern = Pattern.compile("GET /(?<fileName>.*) HTTP/1.[01]");
-      		   Matcher matcher = pattern.matcher(line);
-      		   fileName = matcher.group(1);//from 1.7 ->matcher.group("filename");
+    fileName= line.substring(5, line.length()-9).trim();
       		 
       		System.out.println("ARCHIVO PEDIDO: "+fileName);
       		   

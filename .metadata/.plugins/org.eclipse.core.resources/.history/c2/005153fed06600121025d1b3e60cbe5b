@@ -57,7 +57,7 @@ public class ThreadServer implements Runnable{
   //  fileName= line.substring(5, line.length()-9).trim();
       		   //EXPRESIÓN REGULAR
       		   
-      		   Pattern pattern = Pattern.compile("GET /(?<fileName>.*) HTTP/1.[01]");
+      		   Pattern pattern = Pattern.compile("GET /(?<fileName>.%) HTTP/1.[01]");
       		   Matcher matcher = pattern.matcher(line);
       		   fileName = matcher.group(1);//from 1.7 ->matcher.group("filename");
       		 
