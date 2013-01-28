@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="19" version="2.0">
+<workbench progressCount="9" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1024" x="65" y="24">
 <fastViewData fastViewLocation="1024"/>
@@ -16,14 +16,14 @@
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="120" y="30"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="76" y="30"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="104" y="30"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="68" y="30"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="124" y="30"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="184" y="30"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -32,10 +32,16 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 </editorArea>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HttpServerThread.java" partName="HttpServerThread.java" path="/home/ruben/PSP/PSP/PHttpServerMultiHilos/src/Serpis/psp/HttpServerThread.java" title="HttpServerThread.java" tooltip="PHttpServerMultiHilos/src/Serpis/psp/HttpServerThread.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PHttpServerMultiHilos/src/Serpis/psp/HttpServerThread.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1098" selectionTopPixel="0"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
@@ -43,6 +49,10 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Warnings (9 items)"/>
+</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="197" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -96,7 +106,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.egit.ui.RepositoriesView" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -241,7 +251,7 @@
 <layout>
 <mainWindow>
 <info folder="true" part="left">
-<folder activePageID="org.eclipse.egit.ui.RepositoriesView" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
 <page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
 <page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.egit.ui.RepositoriesView" label="Git Repositories"/>
@@ -288,7 +298,51 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/PHttpServerMultiHilos/src/Serpis/psp/HttpServerThread.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/PHttpServerMultiHilos/src/Serpis/psp/HttpServerMain.java"/>
+</editors>
+<item historyLabel="HttpServerThread.java" index="0">
+<position info="not_deleted" x="2916" y="0"/>
+</item>
+<item historyLabel="HttpServerMain.java" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="HttpServerThread.java" index="0">
+<position info="not_deleted" x="1944" y="0"/>
+</item>
+<item historyLabel="HttpServerMain.java" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="HttpServerThread.java" index="0">
+<position info="not_deleted" x="1347" y="0"/>
+</item>
+<item historyLabel="HttpServerMain.java" index="1">
+<position info="not_deleted" x="670" y="0"/>
+</item>
+<item historyLabel="HttpServerThread.java" index="0">
+<position info="not_deleted" x="483" y="0"/>
+</item>
+<item historyLabel="HttpServerMain.java" index="1">
+<position info="not_deleted" x="260" y="61"/>
+</item>
+<item historyLabel="HttpServerThread.java" index="0">
+<position info="not_deleted" x="395" y="0"/>
+</item>
+<item historyLabel="HttpServerMain.java" index="1">
+<position info="not_deleted" x="152" y="576"/>
+</item>
+<item historyLabel="HttpServerThread.java" index="0">
+<position info="not_deleted" x="1098" y="0"/>
+</item>
+<item historyLabel="HttpServerMain.java" index="1">
+<position info="not_deleted" x="152" y="576"/>
+</item>
+<item active="true" historyLabel="HttpServerThread.java" index="0">
+<position info="not_deleted" x="1098" y="0"/>
+</item>
+</navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
@@ -306,6 +360,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HttpServerThread.java" tooltip="PHttpServerMultiHilos/src/Serpis/psp/HttpServerThread.java">
+<persistable path="/PHttpServerMultiHilos/src/Serpis/psp/HttpServerThread.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ThreadServer.java" tooltip="PHttpServer/src/serpis/psp/ThreadServer.java">
 <persistable path="/PHttpServer/src/serpis/psp/ThreadServer.java"/>
 </file>
