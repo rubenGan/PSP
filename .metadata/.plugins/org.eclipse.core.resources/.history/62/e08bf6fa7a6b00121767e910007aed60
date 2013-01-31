@@ -16,7 +16,7 @@ public class SimpleServer {
 private static final String newLine="\r\n";
 
               
-        public static void Process(Socket socket)throws IOException, InterruptedException{
+        public static void Process(Socket socket)throws IOException{
         	 String fileName=getFileName(socket.getInputStream());
              writeHeader(socket.getOutputStream(),fileName);
              writeFile(socket.getOutputStream(),fileName);

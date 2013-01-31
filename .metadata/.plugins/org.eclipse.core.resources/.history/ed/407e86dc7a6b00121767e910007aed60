@@ -16,7 +16,7 @@ public class SimpleServer {
 private static final String newLine="\r\n";
 
               
-        public static void Process(Socket socket)throws IOException, InterruptedException{
+        public static void Process(Socket socket)throws IOException{
         	 String fileName=getFileName(socket.getInputStream());
              writeHeader(socket.getOutputStream(),fileName);
              writeFile(socket.getOutputStream(),fileName);
@@ -64,7 +64,7 @@ private static final String newLine="\r\n";
         }
         
         
-      private static void writeFile(OutputStream outputStream, String fileName) throws IOException, InterruptedException{
+      private static void writeFile(OutputStream outputStream, String fileName) throws IOException{
           final String fileNameError404="fileError404.html";
 
      File file = new File(fileName);
@@ -76,12 +76,9 @@ private static final String newLine="\r\n";
           FileInputStream fileInputStream=new FileInputStream(responseFileName);
 
           int count;
-          while((count=fileInputStream.read(buffer))!=-1){
-       System.out.print(Thread.currentThread().getName()+" ");
-       Thread.sleep(5000);
-        	  outputStream.write(buffer, 0, count);
-        
-          }
+          while((count=fileInputStream.read(buffer))!=-1)
+        outputStream.write(buffer, 0, count);
+          
           fileInputStream.close();
     
     
