@@ -1,9 +1,14 @@
 package Serpis.psp;
 
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Scanner;
 
 
 
@@ -18,18 +23,10 @@ private static final String newLine="\r\n";
                
         ServerSocket serverSocket = new ServerSocket(port);
         
-       
-    
-        
-    
          while(true){
         
         Socket socket =serverSocket.accept();
-     // SimpleServer.Process(socket);
-        Runnable runnable = new ServerThread(socket);
-        Thread thread = new Thread (runnable);
-        thread.start();
-        
+      SimpleServer.Process(socket);
        
       }
         

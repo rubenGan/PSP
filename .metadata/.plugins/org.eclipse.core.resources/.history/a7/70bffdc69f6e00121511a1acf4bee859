@@ -11,35 +11,62 @@ import java.util.Scanner;
 
 public class ServerThread implements Runnable
 {
-	private final  String defaultFileName="index.html";
+	
 	private Socket socket = null;
 	private static final String newLine = "\r\n";
-	private InputStream inputStream;
-	private OutputStream outputStream;
-	private String fileName;
-	private final String response200 ="HTTP/1.0 200 OK";
-	private final String response404 ="HTTP/1.0 404 Not Found";
-	private final String fileNameError404 = "fileError404.html";
-
-	
+	final int port = 8080;	
 	ServerSocket serverSocket = null;
 
     public ServerThread(Socket socket) {
      
       this.socket = socket;
     }
-    
-    
+    public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		
+    	 String threadName= Thread.currentThread().getName();
+    	    
+         System.out.println("threadName= "+threadName);
+		
+		final int port = 8080;
+		
+		ServerSocket serverSocket = null;
+		
+        
+
+        try {
+        	serverSocket = new ServerSocket(port);
+        } catch (IOException e)
+        {
+            System.err.println("No se puede escuchar en el puerto "+port);
+            System.exit(-1);
+        }
+        
+        
+        
+
+        while (true)
+        {
+          ServerThread serverThread =new ServerThread(serverSocket.accept());
+          Thread thread = new Thread(serverThread);
+          thread.start();
+          //serverSocket.close();
+        }
+        
+	}
     public void run()
     {
     	try
 		{
-    			inputStream=socket.getInputStream();
-    			outputStream=socket.getOutputStream();
-				getFileName();
-				writeHeader();
-				writeFile();
+				String fileName = getFileName(socket.getInputStream());
 			 
+			 	writeHeader(socket.getOutputStream(),fileName);
+			 	writeFile(socket.getOutputStream(),fileName);
+			 	
+			 	socket.close();
+			 	
+			 	
+			
 		}catch(Exception e){
 				System.err.println("Error:" + e.getMessage());
 				e.printStackTrace();
@@ -54,11 +81,12 @@ public class ServerThread implements Runnable
 			}
     	
     	}
-    private String getFileName()
+    private static String getFileName(InputStream inputStream)
 	{
 		Scanner scanner = new Scanner( inputStream);
+		final String defaultFileName="index.html";
 		
-		 fileName ="";
+		String fileName ="";
 	
 		while (true)
 		{
@@ -79,11 +107,12 @@ public class ServerThread implements Runnable
 	    System.out.println("ARCHIVO PEDIDO: "+fileName);
 		return fileName; 
 	}
-	private  void writeHeader() throws IOException
+	private static void writeHeader(OutputStream outputStream, String fileName) throws IOException
 	{	
 		File file = new File(fileName);
 		
-		
+		final String response200 ="HTTP/1.0 200 OK";
+		final String response404 ="HTTP/1.0 404 Not Found";
 		String response = file.exists() ? response200 : response404;
 		String header = response + newLine + newLine;
 		
@@ -91,8 +120,9 @@ public class ServerThread implements Runnable
 		
 		outputStream.write(headerBuffer );
 	}
-	private  void writeFile() throws IOException{
+	private static void writeFile(OutputStream outputStream, String fileName) throws IOException{
 		
+		final String fileNameError404 = "fileError404.html";
 		
 		File file = new File(fileName);
 		String responseFileName = file.exists() ? fileName : fileNameError404;

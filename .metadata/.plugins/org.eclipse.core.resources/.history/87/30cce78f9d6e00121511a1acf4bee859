@@ -18,18 +18,16 @@ private static final String newLine="\r\n";
                
         ServerSocket serverSocket = new ServerSocket(port);
         
-       
-    
-        
-    
          while(true){
         
         Socket socket =serverSocket.accept();
      // SimpleServer.Process(socket);
+        for (int i=0;i<4;i++){
         Runnable runnable = new ServerThread(socket);
         Thread thread = new Thread (runnable);
         thread.start();
-        
+        Thread.sleep(1000);
+        }
        
       }
         

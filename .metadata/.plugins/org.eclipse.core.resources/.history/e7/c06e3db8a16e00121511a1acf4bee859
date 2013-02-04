@@ -14,13 +14,10 @@ public class ServerThread implements Runnable
 	private final  String defaultFileName="index.html";
 	private Socket socket = null;
 	private static final String newLine = "\r\n";
+	final int port = 8080;	
 	private InputStream inputStream;
 	private OutputStream outputStream;
 	private String fileName;
-	private final String response200 ="HTTP/1.0 200 OK";
-	private final String response404 ="HTTP/1.0 404 Not Found";
-	private final String fileNameError404 = "fileError404.html";
-
 	
 	ServerSocket serverSocket = null;
 
@@ -83,7 +80,8 @@ public class ServerThread implements Runnable
 	{	
 		File file = new File(fileName);
 		
-		
+		final String response200 ="HTTP/1.0 200 OK";
+		final String response404 ="HTTP/1.0 404 Not Found";
 		String response = file.exists() ? response200 : response404;
 		String header = response + newLine + newLine;
 		
@@ -93,6 +91,7 @@ public class ServerThread implements Runnable
 	}
 	private  void writeFile() throws IOException{
 		
+		final String fileNameError404 = "fileError404.html";
 		
 		File file = new File(fileName);
 		String responseFileName = file.exists() ? fileName : fileNameError404;
