@@ -7,7 +7,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class ServerThread implements Runnable
@@ -41,13 +40,17 @@ public class ServerThread implements Runnable
 				writeHeader();
 				writeFile();
 			 
-		} catch (IOException e) {		
-		}
-    	finally{
+		}catch(Exception e){
+				System.err.println("Error:" + e.getMessage());
+				e.printStackTrace();
+				
+			}finally{
 			try {
 				socket.close();
 			} catch (IOException e) {
-			} catch (NoSuchElementException ex){}
+				
+				e.printStackTrace();
+			}
 			}
     	
     	}
@@ -104,7 +107,10 @@ public class ServerThread implements Runnable
 		while((count = fileInputStream.read(buffer)) != -1){
 			try {
 				Thread.sleep(3000);
-			} catch (InterruptedException e) {}
+			} catch (InterruptedException e) {
+				
+				e.printStackTrace();
+			}
 			outputStream.write(buffer, 0, count);
 		}
 			

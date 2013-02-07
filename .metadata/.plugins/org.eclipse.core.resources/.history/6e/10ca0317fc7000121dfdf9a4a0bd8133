@@ -47,7 +47,7 @@ public class ServerThread implements Runnable
 			try {
 				socket.close();
 			} catch (IOException e) {
-			} catch (NoSuchElementException ex){}
+			} catch (NoSuchElementException ex){	}
 			}
     	
     	}
@@ -104,7 +104,10 @@ public class ServerThread implements Runnable
 		while((count = fileInputStream.read(buffer)) != -1){
 			try {
 				Thread.sleep(3000);
-			} catch (InterruptedException e) {}
+			} catch (InterruptedException e) {
+				
+				e.printStackTrace();
+			}
 			outputStream.write(buffer, 0, count);
 		}
 			

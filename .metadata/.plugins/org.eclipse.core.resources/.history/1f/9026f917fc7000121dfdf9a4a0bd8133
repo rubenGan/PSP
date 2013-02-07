@@ -23,7 +23,6 @@ private static final String newLine="\r\n";
         
     
          while(true){
-        	 
         
         Socket socket =serverSocket.accept();
      // SimpleServer.Process(socket);
